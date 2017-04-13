@@ -7,6 +7,7 @@ package com.example.matt.devogellaandroidsqlitefirst;
 public class Comment {
     private long id;
     private String comment;
+    private String rating;
 
     public long getId() {
         return id;
@@ -20,14 +21,28 @@ public class Comment {
         return comment;
     } //gets comment
 
+    public String getString() {return rating;} //gets rating
+
     public void setComment(String comment) {
         this.comment = comment;
     } //sets comment
+
+    public void setRating(String rating) {
+        this.rating = comment;
+    } //sets rating
+
+
+
 
 
     // Will be used by the ArrayAdapter in the ListView
     @Override
     public String toString() {
-        return comment;
+        if ( id != R.id.rating ) {
+            return comment;
+        } else {
+            return rating;
+        }
+
     } //returns comment
 }

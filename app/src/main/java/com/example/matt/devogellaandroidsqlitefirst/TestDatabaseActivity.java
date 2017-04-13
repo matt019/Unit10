@@ -39,7 +39,7 @@ public class TestDatabaseActivity extends ListActivity {
                 String[] comments = new String[] { "Cool", "Very nice", "Hate it" };
                 int nextInt = new Random().nextInt(3);
                 // save the new comment to the database
-                comment = datasource.createComment(comments[nextInt]);
+                comment = datasource.createComment(comments[nextInt], comments[nextInt]);
                 adapter.add(comment);
                 break;
             case R.id.delete: // case deletes a comment
@@ -48,6 +48,7 @@ public class TestDatabaseActivity extends ListActivity {
                     datasource.deleteComment(comment);
                     adapter.remove(comment);
                 }
+
                 break;
         }
         adapter.notifyDataSetChanged();
